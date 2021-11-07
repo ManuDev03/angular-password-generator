@@ -8,9 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'passGen';
   password=''
+  length = 0
   includeLetters = false
   includeNumbers= false
   includeSymbols= false
+
+  onChangeLength(value : string){
+    const parsedValue = parseInt(value)
+
+    if(!isNaN(parsedValue)){
+      this.length = parsedValue
+    }
+  }
 
   onChangeUseLetter(){
     this.includeLetters = !this.includeLetters
@@ -30,5 +39,6 @@ export class AppComponent {
                   Include Numbers: ${this.includeNumbers}
                   Include Symbols: ${this.includeSymbols}
                   `)
+    console.log(`password length : ${this.length}`)
   }
 }
