@@ -32,13 +32,28 @@ export class AppComponent {
   }
 
   onButtonClick(){
-    this.password = 'my password'
-    console.log('Button clicked..')
-    console.log(`generating password for the following terms:
-                  Include letters: ${this.includeLetters}
-                  Include Numbers: ${this.includeNumbers}
-                  Include Symbols: ${this.includeSymbols}
-                  `)
-    console.log(`password length : ${this.length}`)
+   const numbers = '1234567890'
+   const letters = 'abcdefghijklmnopqrstuvwxyz'
+   const symbols = '!@#$%^&*()'
+
+   let varchars = ''
+
+   if(this.includeLetters){
+     varchars += letters
+   }
+   if(this.includeNumbers){
+    varchars += numbers
+  }
+  if(this.includeSymbols){
+    varchars += symbols
+  }
+
+  let generatedPassword = ''
+  for(let i = 0;i<this.length;i++){
+    const index = Math.floor(Math.random() * varchars.length)
+    generatedPassword += varchars[index]
+  }
+   this.password = generatedPassword
+
   }
 }
