@@ -16,10 +16,12 @@
   <input type="checkbox" >
 </div>
 <div>
-  <button>
+  <button (click)="onButtonClick()">
     Generate
   </button>
 </div>
 <div>
-  <input type="text">
+  <label>your password</label>
+  <input type="text" [value]='password'>
 </div>
+{{password}}

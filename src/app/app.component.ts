@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'passGen';
+  password=''
+  onButtonClick(){
+    this.password = 'my password'
+    console.log('Button clicked..')
+  }
 }
