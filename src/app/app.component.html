@@ -3,17 +3,18 @@
   <label>enter length</label>
   <input type="text" >
 </div>
-<div>
-  <label>use numbers</label>
-  <input type="checkbox" >
-</div>
+
 <div>
   <label>use letters</label>
-  <input type="checkbox" >
+  <input type="checkbox" (change)="onChangeUseLetter()" >
+</div>
+<div>
+  <label>use numbers</label>
+  <input type="checkbox" (change)="onChangeUseNumbers()" >
 </div>
 <div>
   <label>use symbols</label>
-  <input type="checkbox" >
+  <input type="checkbox"  (change)="onChangeUseSymbols()">
 </div>
 <div>
   <button (click)="onButtonClick()">
